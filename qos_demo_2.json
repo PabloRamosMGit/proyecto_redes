@@ -1,0 +1,40 @@
+{
+  "Cisco-IOS-XE-native:native": {
+    "policy": {
+      "Cisco-IOS-XE-policy:class-map": [
+        {
+          "name": "MI-CLASE-NUEVA",
+          "prematch": "match-any"
+        }
+      ],
+      "Cisco-IOS-XE-policy:policy-map": [
+        {
+          "name": "MI-POLITICA-NUEVA",
+          "class": [
+            {
+              "name": "MI-CLASE-NUEVA",
+              "action-list": [
+                {
+                  "action-type": "bandwidth",
+                  "bandwidth": {
+                    "percent": 70
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "interface": {
+      "GigabitEthernet": [
+        {
+          "name": "3",
+          "Cisco-IOS-XE-policy:service-policy": {
+            "output": "MI-POLITICA-NUEVA"
+          }
+        }
+      ]
+    }
+  }
+}
