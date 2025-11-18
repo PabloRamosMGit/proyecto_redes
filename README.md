@@ -1,5 +1,3 @@
-# proyecto_redes
-
 ## Required Configuration
 
 This project requires access to the Lab Network via VPN. The recommended environment is Ubuntu or WSL (Windows Subsystem for Linux).
